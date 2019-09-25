@@ -13,10 +13,10 @@
     <template v-slot:default>
       <thead>
         <tr>
-          <th class="text-center">Total Wokring Days</th>
-          <th class="text-center">Logged Hours</th>
-          <th class="text-center">Available hours</th>
-          <th class="text-center">Hours Not Logged</th>
+          <th class="text-center header">Total Working Days</th>
+          <th class="text-center header">Logged Hours</th>
+          <th class="text-center header">Available Hours</th>
+          <th class="text-center header">Hours Not Logged</th>
         </tr>
       </thead>
       <tbody>
@@ -24,7 +24,7 @@
           <td class="text-center">{{ working_days }}</td>
           <td class="text-center">{{ logged_hours }}</td>
           <td class="text-center">{{ available_hours }}</td>
-          <td class="text-center">{{ not_logged_hours }}</td>
+          <td class="text-center" style="color:red">{{ not_logged_hours }}</td>
         </tr>
       </tbody>
     </template>
@@ -36,44 +36,37 @@
             :items="desserts"
             class="elevation-1 mt-5"
             :search="search"
+
         >
             <template v-slot:item.actions="{ item }">
 
                 <v-tooltip v-model="show" bottom>
                 <template v-slot:activator="{ on }">
                     <v-btn icon v-on="on">
-                    <v-icon color="gray lighten-1"> mdi-office</v-icon>
+                    <v-icon color="green lighten-1"> mdi-watch</v-icon>
                     </v-btn>
                 </template>
-                <span>Manage Department</span>
+                <span>Add Log Time</span>
                 </v-tooltip>
 
                 <v-tooltip v-model="show" bottom>
                 <template v-slot:activator="{ on }">
                     <v-btn icon v-on="on">
-                    <v-icon color="gray lighten-1"> mdi-truck-delivery</v-icon>
+                    <v-icon color="green lighten-1"> mdi-checkbox-marked-circle-outline</v-icon>
                     </v-btn>
                 </template>
-                <span>Purchase Order</span>
+                <span>Mark As Leave</span>
                 </v-tooltip>
 
                 <v-tooltip v-model="show" bottom>
                 <template v-slot:activator="{ on }">
                     <v-btn icon v-on="on">
-                    <v-icon color="gray lighten-1"> mdi-pencil</v-icon>
+                    <v-icon color="green lighten-1"> mdi mdi-copyright</v-icon>
                     </v-btn>
                 </template>
                 <span>Edit Client</span>
                 </v-tooltip>
 
-                <v-tooltip v-model="show" bottom>
-                <template v-slot:activator="{ on }">
-                    <v-btn icon v-on="on">
-                    <v-icon color="gray lighten-1">mdi-delete-outline</v-icon>
-                    </v-btn>
-                </template>
-                <span>Delete Client</span>
-                </v-tooltip>
             </template>
 
 			<template v-slot:item.calories="{ item }">
@@ -207,5 +200,11 @@
 
 <style scoped>
 td, th { border: 1px solid grey;
+}
+.header {
+    color: black !important
+}
+.v-data-table-header {
+    color: red !important
 }
 </style>

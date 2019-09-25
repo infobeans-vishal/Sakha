@@ -8,6 +8,7 @@ import Imports from './views/ImportCSV.vue'
 import Milestone from './views/Milestones.vue'
 import AddClient from './views/Client/AddClient.vue'
 import Timesheet from './views/Timesheet.vue'
+import Updates from './views/Updates.vue'
 
 Vue.use(Router)
 
@@ -116,7 +117,7 @@ export default new Router({
     {
       path: '/updates',
       name: 'updates',
-      component: Projects,
+      component: Updates,
       meta: {
         breadcrumb: [
           { text: 'Home', href: '/', disabled: false },

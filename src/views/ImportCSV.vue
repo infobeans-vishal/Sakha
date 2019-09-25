@@ -1,7 +1,7 @@
 <template>
 	<v-container>
 		<v-card-title>
-      IMPORT CSV
+      Import CSV
 
 			<div class="flex-grow-1"></div>
 			<v-text-field
@@ -10,7 +10,7 @@
                     hide-details
                     outlined
                 ></v-text-field>
-            <v-btn class="ml-5" outlined medium @click="addProject" color="blue">Add New Project</v-btn>
+            <v-btn class="ml-5" outlined small @click="addProject" color="green">Add CSV</v-btn>
 		</v-card-title>
 		<v-data-table
             :headers="headers"
@@ -22,7 +22,7 @@
                 <v-tooltip v-model="show" bottom>
                 <template v-slot:activator="{ on }">
                     <v-btn icon v-on="on">
-                    <v-icon color="gray lighten-1">mdi-format-list-bulleted-type</v-icon>
+                    <v-icon color="green lighten-1">mdi-format-list-bulleted-type</v-icon>
                     </v-btn>
                 </template>
                 <span>View Logs</span>

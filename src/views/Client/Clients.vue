@@ -1,7 +1,7 @@
 <template>
 	<v-container>
 		<v-card-title>
-      CLIENTS
+      Clients
 
 			<div class="flex-grow-1"></div>
 			<v-text-field
@@ -10,7 +10,7 @@
                     hide-details
                     outlined
                 ></v-text-field>
-            <v-btn class="ml-5" outlined medium @click="addClient" color="blue">Add New Client</v-btn>
+            <v-btn class="ml-5" outlined small @click="addClient" color="green">Add New Client</v-btn>
 		</v-card-title>
 		<v-data-table
             :headers="headers"
@@ -23,7 +23,7 @@
                 <v-tooltip v-model="show" bottom>
                 <template v-slot:activator="{ on }">
                     <v-btn icon v-on="on">
-                    <v-icon color="gray lighten-1"> mdi-office</v-icon>
+                    <v-icon color="green lighten-1"> mdi-office</v-icon>
                     </v-btn>
                 </template>
                 <span>Manage Department</span>
@@ -32,7 +32,7 @@
                 <v-tooltip v-model="show" bottom>
                 <template v-slot:activator="{ on }">
                     <v-btn icon v-on="on">
-                    <v-icon color="gray lighten-1"> mdi-truck-delivery</v-icon>
+                    <v-icon color="green lighten-1"> mdi-truck-delivery</v-icon>
                     </v-btn>
                 </template>
                 <span>Purchase Order</span>
@@ -41,7 +41,7 @@
                 <v-tooltip v-model="show" bottom>
                 <template v-slot:activator="{ on }">
                     <v-btn icon v-on="on">
-                    <v-icon color="gray lighten-1"> mdi-pencil</v-icon>
+                    <v-icon color="green lighten-1"> mdi-pencil</v-icon>
                     </v-btn>
                 </template>
                 <span>Edit Client</span>
@@ -50,7 +50,7 @@
                 <v-tooltip v-model="show" bottom>
                 <template v-slot:activator="{ on }">
                     <v-btn icon v-on="on">
-                    <v-icon color="gray lighten-1">mdi-delete-outline</v-icon>
+                    <v-icon color="green lighten-1">mdi-delete-outline</v-icon>
                     </v-btn>
                 </template>
                 <span>Delete Client</span>

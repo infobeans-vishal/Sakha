@@ -1,7 +1,7 @@
 <template>
 	<v-container>
 		<v-card-title>
-      PROJECETS
+      Projects
 
 			<div class="flex-grow-1"></div>
 			<v-text-field
@@ -10,7 +10,7 @@
                     hide-details
                     outlined
                 ></v-text-field>
-            <v-btn class="ml-5" outlined medium @click="addProject" color="green">Add New Project</v-btn>
+            <v-btn class="ml-5" outlined small @click="addProject" color="green">Add New Project</v-btn>
 		</v-card-title>
 		<v-data-table
             :headers="headers"
@@ -23,7 +23,7 @@
                 <v-tooltip v-model="show" bottom>
                 <template v-slot:activator="{ on }">
                     <v-btn icon v-on="on">
-                    <v-icon color="gray lighten-1"> mdi-account-circle-outline</v-icon>
+                    <v-icon color="green lighten-1"> mdi-account-circle-outline</v-icon>
                     </v-btn>
                 </template>
                 <span>Resource Association</span>
@@ -31,7 +31,7 @@
                 <v-tooltip v-model="show" bottom>
                 <template v-slot:activator="{ on }">
                     <v-btn icon v-on="on">
-                    <v-icon color="gray lighten-1"> mdi-pencil</v-icon>
+                    <v-icon color="green lighten-1"> mdi-pencil</v-icon>
                     </v-btn>
                 </template>
                 <span>Edit Project</span>
@@ -40,7 +40,7 @@
                 <v-tooltip v-model="show" bottom>
                 <template v-slot:activator="{ on }">
                     <v-btn icon v-on="on">
-                    <v-icon color="gray lighten-1"> mdi-cash</v-icon>
+                    <v-icon color="green lighten-1"> mdi-cash</v-icon>
                     </v-btn>
                 </template>
                 <span>Expenses</span>
@@ -48,7 +48,7 @@
                 <v-tooltip v-model="show" bottom>
                 <template v-slot:activator="{ on }">
                     <v-btn icon v-on="on">
-                    <v-icon color="gray lighten-1">mdi-timelapse</v-icon>
+                    <v-icon color="green lighten-1">mdi-timelapse</v-icon>
                     </v-btn>
                 </template>
                 <span>Allocate Hours</span>
@@ -56,7 +56,7 @@
                 <v-tooltip v-model="show" bottom>
                 <template v-slot:activator="{ on }">
                     <v-btn icon v-on="on">
-                    <v-icon color="gray lighten-1">mdi-delete-outline</v-icon>
+                    <v-icon color="green lighten-1">mdi-delete-outline</v-icon>
                     </v-btn>
                 </template>
                 <span>Delete Project</span>
@@ -64,7 +64,7 @@
                 <v-tooltip v-model="show" bottom>
                 <template v-slot:activator="{ on }">
                     <v-btn icon v-on="on">
-                    <v-icon color="gray lighten-1">mdi-eye-outline</v-icon>
+                    <v-icon color="green lighten-1">mdi-eye-outline</v-icon>
                     </v-btn>
                 </template>
                 <span>View SOW</span>
@@ -72,7 +72,7 @@
                 <v-tooltip v-model="show" bottom>
                 <template v-slot:activator="{ on }">
                     <v-btn icon v-on="on">
-                    <v-icon color="gray lighten-1">mdi-format-list-bulleted-type</v-icon>
+                    <v-icon color="green lighten-1">mdi-format-list-bulleted-type</v-icon>
                     </v-btn>
                 </template>
                 <span>View Milestones</span>
