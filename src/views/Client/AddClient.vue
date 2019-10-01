@@ -14,6 +14,7 @@
                   label="Name *"
                   shaped
                   v-model="name"
+                  single-line
                   >
 
                   </v-text-field>

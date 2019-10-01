@@ -32,7 +32,7 @@
       items: [
         {
           text: 'Dashboard',
-          icon: 'mdi-view-dashboard',
+          icon: 'mdi-view-dashboard-outline',
           link: '/',
     }, {
         text: 'Projects',
@@ -40,15 +40,15 @@
         link: 'projects'
     }, {
         text: 'Clients',
-        icon: 'mdi-account',
+        icon: 'mdi-account-outline',
         link: 'clients'
     }, {
         text: 'Resources',
-        icon: 'mdi-account',
+        icon: 'mdi-account-outline',
         link: 'resources'
     }, {
         text: 'Invoices',
-        icon: 'mdi-flag',
+        icon: 'mdi-flag-outline',
         link: 'invoices'
     }, {
         text: 'Import',
@@ -62,7 +62,12 @@
         text: 'Timesheet',
         icon: 'mdi-timer',
         link: 'timesheet'
-    }, {
+    },{
+        text: 'Holiday',
+        icon: 'mdi-calendar-text',
+        link: 'holiday'
+    }
+    , {
         text: 'Updates',
         icon: 'mdi-update',
         link: 'updates'

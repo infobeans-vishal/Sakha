@@ -21,8 +21,8 @@
             <template v-slot:item.actions="{ item }">
                 <v-tooltip v-model="show" bottom>
                 <template v-slot:activator="{ on }">
-                    <v-btn icon v-on="on">
-                    <v-icon color="green lighten-1">mdi-format-list-bulleted-type</v-icon>
+                    <v-btn icon v-on="on" small>
+                    <v-icon color="green lighten-3">mdi-format-list-bulleted-type</v-icon>
                     </v-btn>
                 </template>
                 <span>View Logs</span>
@@ -45,13 +45,14 @@
         headers: [
           {
             text: 'CSV Type',
-            align: 'left',
+            align: 'center',
             sortable: false,
             value: 'name',
+            width: '20%'
           },
-          { text: 'File', value: 'calories' },
-          { text: 'Author', value: 'fat' },
-          { text: 'Import Date & Time', value: 'carbs', align: 'center' },
+          { text: 'File', align: 'center', value: 'calories' },
+          { text: 'Author', align: 'center', value: 'fat' },
+          { text: 'Import Date & Time', align: 'center', value: 'carbs', align: 'center' },
           { text: 'Actions', value: 'actions', sortable: false, align: 'center' },
         ],
         desserts: [

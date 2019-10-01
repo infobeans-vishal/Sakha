@@ -1,23 +1,22 @@
 <template>
 	<v-container>
 		<v-card-title>
-      Clients
+      Resources
 
 			<div class="flex-grow-1"></div>
 			<v-text-field
                     v-model="search"
-                    label="Search Client"
+                    label="Search Resource"
                     hide-details
                     outlined
                     rounded
                     append-icon="mdi-account-search"
                 ></v-text-field>
-            <v-btn class="ml-5" outlined small @click="addClient" color="green">Add New Client</v-btn>
+            <v-btn class="ml-5" outlined small @click="" color="green">Add New Resource</v-btn>
 		</v-card-title>
 		<v-data-table
             :headers="headers"
             :items="result"
-            class="elevation-1"
             :search="search"
             :loading="loading"
             loading-text="Loading... Please wait"
@@ -26,8 +25,8 @@
 
                 <v-tooltip  bottom>
                 <template v-slot:activator="{ on }">
-                    <v-btn icon v-on="on" small>
-                    <v-icon color="green lighten-3"> mdi-office</v-icon>
+                    <v-btn icon v-on="on">
+                    <v-icon color="green lighten-1"> mdi-office</v-icon>
                     </v-btn>
                 </template>
                 <span>Manage Department</span>
@@ -35,8 +34,8 @@
 
                 <v-tooltip  bottom>
                 <template v-slot:activator="{ on }">
-                    <v-btn icon v-on="on" small>
-                    <v-icon color="green lighten-3"> mdi-truck-delivery</v-icon>
+                    <v-btn icon v-on="on">
+                    <v-icon color="green lighten-1"> mdi-truck-delivery</v-icon>
                     </v-btn>
                 </template>
                 <span>Purchase Order</span>
@@ -44,8 +43,8 @@
 
                 <v-tooltip  bottom>
                 <template v-slot:activator="{ on }">
-                    <v-btn icon v-on="on" small>
-                    <v-icon color="green lighten-3"> mdi-pencil</v-icon>
+                    <v-btn icon v-on="on">
+                    <v-icon color="green lighten-1"> mdi-pencil</v-icon>
                     </v-btn>
                 </template>
                 <span>Edit Client</span>
@@ -53,55 +52,59 @@
 
                 <v-tooltip  bottom>
                 <template v-slot:activator="{ on }">
-                    <v-btn icon v-on="on" @click="deleteClient(item.id)" small>
-                    <v-icon color="green lighten-3">mdi-delete-outline</v-icon>
+                    <v-btn icon v-on="on" @click="deleteResource(item.id)">
+                    <v-icon color="green lighten-1">mdi-delete-outline</v-icon>
                     </v-btn>
                 </template>
-                <span>Delete Client</span>
+                <span>Delete Resource</span>
                 </v-tooltip>
             </template>
 
-      <template v-slot:item.clientSince="{ item }">
-			<v-icon small color="blue">mdi-calendar-plus</v-icon>	{{ item.clientSince | formatDate}}
+            <template v-slot:item.dateOfJoin="{ item }">
+				<v-icon small color="blue">mdi-calendar-plus</v-icon> {{ item.dateOfJoin | formatDate}}
 			</template>
-			<template v-slot:item.status="{ item }">
-				<v-chip :color="getColor(item.status)" small outlined>{{ item.status }}</v-chip>
+			<template v-slot:item.calories="{ item }">
+				<v-chip :color="getColor(item.calories)" dark>{{ item.calories }}</v-chip>
 			</template>
 		</v-data-table>
 	</v-container>
 </template>
 
-<script>
-  export default {
-    data () {
-      return {
 
+<script>
+export default {
+     data () {
+      return {
+        result:[],
         search: '',
-        result: [],
         loading: true,
         headers: [
+            {
+            text: 'Profile',
+            align: 'center',
+            sortable: false,
+            value: 'profile_image',
+          },
           {
             text: 'Name',
             align: 'center',
             sortable: true,
             value: 'name',
           },
-          { text: 'Status', align: 'center', value: 'status' },
-          { text: 'Client Since', align: 'center', value: 'clientSince' },
-          { text: 'Actions', align: 'center', value: 'actions', sortable: false, align: 'center' },
+          { text: 'Practice', value: 'practiceName' },
+          { text: 'Designation', value: 'role' },
+          { text: 'Member Since', value: 'dateOfJoin' },
+          { text: 'Actions', value: 'actions', sortable: false, align: 'center' },
         ],
       }
     },
+    created() {
+        this.getResources()
+    },
     methods: {
-      getColor (status) {
-        if (status == 'Inactive') return 'red'
-         return 'green'
-      },
-      addClient() {
-          this.$router.push('add-client')
-      },
-      getClients () {
-         this.$store.dispatch('getClients').then((response) => {
+
+        getResources() {
+            this.$store.dispatch('getResource').then((response) => {
                 this.result = response.data
                 this.loading = false
             }).catch((error) => {
@@ -110,20 +113,17 @@
                 this.showResult = true;
 
             })
-      },
-      deleteClient(id) {
-            this.$store.dispatch('deleteClient', id ).then((response) => {
-                 this.getClients()
+        },
+        deleteResource(id) {
+             this.$store.dispatch('deleteResource', id ).then((response) => {
+                 this.getResources()
             }).catch((error) => {
                 this.error = true;
                 this.showResult = true;
 
             })
-      }
-    },
-    created() {
-      this.getClients()
-    }
+        }
 
-  }
+    }
+}
 </script>

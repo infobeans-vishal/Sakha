@@ -9,6 +9,9 @@ import Milestone from './views/Milestones.vue'
 import AddClient from './views/Client/AddClient.vue'
 import Timesheet from './views/Timesheet.vue'
 import Updates from './views/Updates.vue'
+import Resources from './views/Resources.vue'
+import Holiday from './views/Holiday.vue'
+import Login from './views/Login.vue'
 
 Vue.use(Router)
 
@@ -62,7 +65,7 @@ export default new Router({
     {
       path: '/resources',
       name: 'resources',
-      component: Projects,
+      component: Resources,
       meta: {
         breadcrumb: [
           { text: 'Home', href: '/', disabled: false },
@@ -162,6 +165,26 @@ export default new Router({
         ]
       }
     },
-
+    {
+      path: '/holiday',
+      name: 'holiday',
+      component: Holiday,
+      meta: {
+        breadcrumb: [
+          { text: 'Home', href: '/', disabled: false },
+          { text: 'Holiday', disabled: true, href: 'breadcrumbs_link_1', },
+        ]
+      }
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login,
+      meta: {
+        breadcrumb: [
+        ],
+        allowAnonymous : true
+      }
+    },
   ]
 })
