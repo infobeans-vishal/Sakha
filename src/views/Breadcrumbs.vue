@@ -1,10 +1,12 @@
 <template>
 <div>
-     <v-breadcrumbs :items="items">
+    <v-container>
+     <v-breadcrumbs :items="items" style="border:1px solid;border-radius:8px;">
       <template v-slot:divider>
         <v-icon>mdi-forward</v-icon>
       </template>
     </v-breadcrumbs>
+    </v-container>
     </div>
 </template>
 

@@ -12,6 +12,10 @@ import Updates from './views/Updates.vue'
 import Resources from './views/Resources.vue'
 import Holiday from './views/Holiday.vue'
 import Login from './views/Login.vue'
+import Employee from './views/Employee.vue'
+import AddEmployee from './views/AddEmployee.vue'
+import EditEmployee from './views/EditEmployee.vue'
+import ViewEmployee from './views/ViewEmployee.vue'
 
 Vue.use(Router)
 
@@ -130,7 +134,7 @@ export default new Router({
     },
     {
       path: '/add-project',
-      name: 'projects',
+      name: 'add-projects',
       component: AddProject,
       meta: {
         breadcrumb: [
@@ -186,5 +190,49 @@ export default new Router({
         allowAnonymous : true
       }
     },
+    {
+      path: '/employee',
+      name: 'employee',
+      component: Employee,
+      meta: {
+        breadcrumb: [
+          { text: 'Home', href: '/', disabled: false },
+          { text: 'Resources', disabled: true, href: 'breadcrumbs_link_1', }
+        ]
+      }
+    },
+    {
+      path: '/add-employee',
+      name: 'add-employee',
+      component: AddEmployee,
+      meta: {
+        breadcrumb: [
+          { text: 'Home', href: '/', disabled: false },
+          { text: 'Resources', disabled: true, href: 'breadcrumbs_link_1', }
+        ]
+      }
+    },
+    {
+      path: '/edit-employee',
+      name: 'edit-employee',
+      component: EditEmployee,
+      meta: {
+        breadcrumb: [
+          { text: 'Home', href: '/', disabled: false },
+          { text: 'Resources', disabled: true, href: 'breadcrumbs_link_1', }
+        ]
+      }
+    },
+    {
+      path: '/view-employee',
+      name: 'view-employee',
+      component: ViewEmployee,
+      meta: {
+        breadcrumb: [
+          { text: 'Home', href: '/', disabled: false },
+          { text: 'Resources', disabled: true, href: 'breadcrumbs_link_1', }
+        ]
+      }
+    }
   ]
 })

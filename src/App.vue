@@ -7,7 +7,7 @@
     <v-content>
       <v-container
       >
-      <Breadcrumbs></Breadcrumbs>
+      <!-- <Breadcrumbs></Breadcrumbs> -->
       <router-view/>
       </v-container>
     </v-content>
@@ -34,7 +34,6 @@ export default {
       source: String,
     },
   data: () => ({
-    drawer: null,
     //
   }),
   created () {

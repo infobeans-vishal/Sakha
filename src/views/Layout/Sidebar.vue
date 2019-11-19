@@ -72,6 +72,11 @@
         icon: 'mdi-update',
         link: 'updates'
     },
+    {
+        text: 'Employee',
+        icon: 'mdi-account',
+        link: 'employee'
+    }
       ],
     }),
   }

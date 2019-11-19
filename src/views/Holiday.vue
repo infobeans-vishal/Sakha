@@ -1,24 +1,24 @@
 <template>
 <v-container>
 	<v-layout row wrap>
-		<v-flex xs3 class="my-2" v-for="(item, i) in list"  :key="i">
+		<v-flex xs3 class="my-2" v-for="(item, i) in result"  :key="i">
 			<v-card
     max-width="250"
     class="mx-auto"
   >
     <v-list-item>
       <v-list-item-content>
-        <v-list-item-title class="headline text-center">{{item.title}}</v-list-item-title>
+        <v-list-item-title class="headline text-center">{{item.leaveDesc}}</v-list-item-title>
       </v-list-item-content>
     </v-list-item>
 
     <v-img
-      :src="item.url"
-      height="194"
+      src="https://picsum.photos/500/200"
+      height="150"
     ></v-img>
 
     <v-card-text>
-    <v-icon class="mr-2">mdi mdi-calendar-multiple-check</v-icon>  {{item.date | formatDate}}
+    <v-icon class="mr-2">mdi mdi-calendar-multiple-check</v-icon>  {{item.startdate | formatDate}}
     </v-card-text>
 
     <v-card-actions>
@@ -43,8 +43,8 @@
         icon
         class="ml-8"
       >
-        <v-icon small>mdi-city</v-icon>
-        {{item.location}}
+        <v-icon small>mdi mdi-map-marker-radius</v-icon>
+        {{item.worklocation}}
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -58,6 +58,7 @@
   export default {
     data: () => ({
       show: false,
+      result: [],
       list:[
           {
             title: 'Holi',
@@ -82,5 +83,24 @@
         }
       ]
     }),
+    methods: {
+
+      getHolidays() {
+         this.$store.dispatch('getHolidays').then((response) => {
+                this.result = response.data
+                console.log(response.data)
+            }).catch((error) => {
+                console.warn('Not ola man :(');
+                this.error = true;
+                this.showResult = true;
+
+            })
+      }
+
+    },
+    created() {
+      this.getHolidays()
+    }
+
 }
 </script>
